@@ -106,7 +106,7 @@ h1 .tag { display:inline-block; font-size:.5em; font-weight:600; margin-top:.2em
 .community-card a { color:var(--accent); font-size:14px; text-decoration:none; }
 .community-card .meta { color:var(--muted); font-size:11px; }
 
-.article-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+.article-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; max-width:900px; }
 .article-card { padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
 .article-image { display:block; width:calc(100% + 36px); margin:-18px -18px 16px; border-bottom:1px solid var(--line); }
 .article-image img { display:block; width:100%; aspect-ratio:1000/420; object-fit:cover; }
