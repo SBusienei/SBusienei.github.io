@@ -5,6 +5,21 @@ document.getElementById("theme").onclick = () => {
   localStorage.setItem("theme", root.dataset.theme);
 };
 
+const nav = document.querySelector("nav");
+const menu = document.getElementById("menu");
+menu.onclick = () => {
+  const open = nav.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(open));
+  menu.textContent = open ? "Close" : "Menu";
+};
+document.querySelectorAll("#nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+    menu.textContent = "Menu";
+  });
+});
+
 const chips = document.querySelectorAll(".chip"), cards = document.querySelectorAll(".card");
 chips.forEach(c => c.onclick = () => {
   chips.forEach(x => x.classList.toggle("on", x === c));
