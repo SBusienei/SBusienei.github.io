@@ -11,7 +11,9 @@
 <div class="wrap">
   <nav>
     <strong class="mono">sharleen.</strong>
-    <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
     <div class="links" id="nav-links">
       <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#community">Community</a><a href="#skills">Skills</a><a href="#writing">Writing</a>
       <button class="icon-btn" id="theme" aria-label="Toggle theme">◐</button>
@@ -95,7 +97,6 @@
     <div class="grid">
       <article class="card" data-tags="mle fde">
         <img class="thumb" src="img/hybrid-search.svg" alt="Hybrid search pipeline diagram">
-        <span class="badge b-built">Built · live demo</span>
         <h3>Hybrid Search &amp; Retrieval Evaluation</h3>
         <p>Hybrid BM25 + ANN + transformer reranking over 8,807 Netflix records behind a cached FastAPI service, with latency benchmarks and a tool-calling agent with grounding checks.</p>
         <p class="why"><b>Shows:</b> retrieval, serving, evaluation, tests, CI and Docker.</p>
@@ -103,16 +104,7 @@
         <div class="row"><a href="https://github.com/SBusienei/Netflix-Relevance-Project">Code</a><a href="https://cheruto-netflix-relevance.streamlit.app/genre">Live app</a></div>
       </article>
       <article class="card" data-tags="mle fde">
-        <img class="thumb" src="img/job-extraction.svg" alt="Job posting to structured JSON">
-        <span class="badge b-wip">In progress</span>
-        <h3>LLM-Based Job Posting Extraction</h3>
-        <p>Turning messy job posts into validated structured data, with retries, fallback models, and accuracy, cost and latency benchmarks.</p>
-        <p class="why"><b>Shows:</b> reliable LLM pipelines, schema validation, cost awareness.</p>
-        <div class="stack"><span>Python</span><span>LLMs</span><span>JSON schema</span></div>
-      </article>
-      <article class="card" data-tags="mle fde">
         <img class="thumb" src="img/sloth.svg" alt="Photo triage flow">
-        <span class="badge b-eval">Evaluated</span>
         <h3>Sloth Archivist</h3>
         <p>An offline CLI that triages photo folders with rules first, a local vision model second, and logs every decision. Nothing is deleted.</p>
         <p class="why"><b>Shows:</b> pipeline design, safe automation, schema-validated model output.</p>
@@ -121,7 +113,6 @@
       </article>
       <article class="card" data-tags="ds">
         <img class="thumb" src="img/ab-tests.svg" alt="Illustrative bar chart">
-        <span class="badge b-wip">In progress</span>
         <h3>Hotel cancellation risk</h3>
         <p>SQL-first analysis and chronologically validated models, explicit about prediction versus intervention.</p>
         <p class="why"><b>Shows:</b> SQL, data quality, leakage control, calibration.</p>

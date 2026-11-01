@@ -10,13 +10,13 @@ const menu = document.getElementById("menu");
 menu.onclick = () => {
   const open = nav.classList.toggle("open");
   menu.setAttribute("aria-expanded", String(open));
-  menu.textContent = open ? "Close" : "Menu";
+  menu.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
 };
 document.querySelectorAll("#nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
     menu.setAttribute("aria-expanded", "false");
-    menu.textContent = "Menu";
+    menu.setAttribute("aria-label", "Open navigation");
   });
 });
 
