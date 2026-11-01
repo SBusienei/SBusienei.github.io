@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Abstract network of search results">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#7ee0b5" stop-opacity=".35"/><stop offset="1" stop-color="#7ee0b5" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="400" rx="28" fill="#161b22"/>
+  <circle cx="200" cy="200" r="190" fill="url(#g)"/>
+  <g stroke="#7ee0b5" stroke-opacity=".45" stroke-width="1.5" fill="none">
+    <path d="M200 200 L90 90M200 200 L320 110M200 200 L330 250M200 200 L120 310M200 200 L70 220M200 200 L240 330"/>
+    <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="120" stroke-dasharray="4 6"/>
+  </g>
+  <g fill="#161b22" stroke="#7ee0b5" stroke-width="2">
+    <circle cx="90" cy="90" r="9"/><circle cx="320" cy="110" r="9"/><circle cx="330" cy="250" r="9"/>
+    <circle cx="120" cy="310" r="9"/><circle cx="70" cy="220" r="9"/><circle cx="240" cy="330" r="9"/>
+  </g>
+  <circle cx="200" cy="200" r="24" fill="#7ee0b5"/>
+  <text x="200" y="206" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#04130d">#1</text>
+  <g font-family="monospace" font-size="12" fill="#8b96a5">
+    <text x="104" y="86">recall@10</text><text x="256" y="106">nDCG</text><text x="268" y="270">MRR</text>
+    <text x="40" y="244">p95</text><text x="140" y="330">BM25</text><text x="250" y="352">rerank</text>
+  </g>
+</svg>
