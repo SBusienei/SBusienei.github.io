@@ -178,7 +178,7 @@ footer { padding:32px 0 56px; color:var(--muted); font-size:14px; border-top:1px
   .lede { font-size:16px; line-height:1.6; }
   section { padding:34px 0; }
 
-  .cta { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:22px; }
+  .cta { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:9px; margin-top:22px; }
   .btn { width:100%; padding:9px 10px; text-align:center; font-size:13px; }
   .social-btn { display:grid; place-items:center; min-height:60px; }
   .social-btn img { display:block; width:25px; height:25px; filter:invert(94%) sepia(7%) saturate(248%) hue-rotate(169deg) brightness(103%) contrast(91%); }
@@ -223,8 +223,7 @@ footer { padding:32px 0 56px; color:var(--muted); font-size:14px; border-top:1px
 }
 
 @media (max-width:380px) {
-  .cta, .facts { grid-template-columns:1fr; }
-  .cta .primary:first-child { grid-column:auto; }
+  .facts { grid-template-columns:1fr; }
 }
 
 /* learn page */
