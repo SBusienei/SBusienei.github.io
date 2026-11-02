@@ -1,0 +1,121 @@
+name: Portfolio update
+description: Submit an article, project, community, profile, experience, or skills update for review.
+title: "[Portfolio update] "
+labels:
+  - portfolio-update-request
+assignees:
+  - SBusienei
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to propose a portfolio change from your phone or browser.
+
+        Submitting the form does not publish anything directly. The update will be validated and prepared for review before it can reach the live portfolio.
+
+  - type: dropdown
+    id: update_type
+    attributes:
+      label: What are you updating?
+      options:
+        - Article
+        - Project
+        - Community or mentorship
+        - Experience or profile
+        - Skills
+        - Existing portfolio item
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: What should happen?
+      options:
+        - Feature or add
+        - Update
+        - Unfeature but keep in the article archive
+        - Remove from the portfolio
+    validations:
+      required: true
+
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL or GitHub repository
+      description: For articles, paste the DEV or Medium URL. For projects, paste the GitHub repository URL. For other updates, provide a public evidence link when available.
+      placeholder: https://dev.to/sbusienei/example-article
+
+  - type: input
+    id: display_title
+    attributes:
+      label: Display title override
+      description: Optional. Leave blank to use the title extracted from the source.
+      placeholder: Building a Reliable Local AI Assistant
+
+  - type: textarea
+    id: portfolio_description
+    attributes:
+      label: Portfolio description override
+      description: Optional. Write one or two factual sentences, or leave blank to use the source description.
+      placeholder: A local-first assistant designed with explicit safety boundaries and observable decisions.
+
+  - type: dropdown
+    id: categories
+    attributes:
+      label: Categories
+      description: Optional. Select every category that applies.
+      multiple: true
+      options:
+        - LLM applications
+        - AI engineering
+        - Retrieval
+        - Evaluation
+        - Data science
+        - Applied or deployment
+        - Community
+
+  - type: input
+    id: image_url
+    attributes:
+      label: Image or logo URL
+      description: Optional. Leave blank to use the source cover or deterministic local artwork.
+      placeholder: https://example.com/cover.png
+
+  - type: input
+    id: organisation
+    attributes:
+      label: Organisation
+      description: Required only for community, mentorship, or experience entries.
+      placeholder: Global Mentorship Initiative
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      description: Required only for community, mentorship, or experience entries.
+      placeholder: Career mentor
+
+  - type: input
+    id: period
+    attributes:
+      label: Period
+      description: Required only for community, mentorship, or experience entries.
+      placeholder: Jan 2026 – Oct 2026
+
+  - type: textarea
+    id: additional_instructions
+    attributes:
+      label: Additional instructions
+      description: Optional placement, wording, or correction notes.
+      placeholder: Place this before Sloth Archivist.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: The information is accurate and can be displayed publicly.
+          required: true
+        - label: I understand that this request must be reviewed before it is published.
+          required: true
