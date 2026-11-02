@@ -1,0 +1,91 @@
+{
+  "latest_published_at": "2026-10-31T11:09:35Z",
+  "articles": [
+    {
+      "source": "DEV",
+      "title": "Hadithi: Speak with your cultural legends e.g. La Llorona and Luanda Magere",
+      "description": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 4: Ghost in the Machine ...",
+      "url": "https://dev.to/sbusienei/hadithi-speak-with-your-cultural-legends-eg-la-llorona-and-luanda-magere-50ad",
+      "canonical_url": "https://dev.to/sbusienei/hadithi-speak-with-your-cultural-legends-eg-la-llorona-and-luanda-magere-50ad",
+      "published_at": "2026-10-31T11:09:35Z",
+      "reading_time_minutes": 7,
+      "sources": [
+        "DEV"
+      ],
+      "image": "img/articles/generated/hadithi-speak-with-your-cultural-legends-8d719da887.webp"
+    },
+    {
+      "source": "DEV",
+      "title": "Sloth Archivist: Clean Your Camera Roll and Journal As You Sleep",
+      "description": "This is a submission for the Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady ...",
+      "url": "https://dev.to/sbusienei/sloth-archivist-clean-your-camera-roll-and-journal-as-you-sleep-5cld",
+      "canonical_url": "https://dev.to/sbusienei/sloth-archivist-clean-your-camera-roll-and-journal-as-you-sleep-5cld",
+      "published_at": "2026-10-26T05:58:56Z",
+      "reading_time_minutes": 6,
+      "sources": [
+        "DEV"
+      ],
+      "image": "img/articles/generated/sloth-archivist-clean-your-camera-roll-and-journ-77d5139b3c.webp"
+    },
+    {
+      "source": "DEV",
+      "title": "Excel: Relevant Or Outdated",
+      "description": "Excel has been there for 40 years, and it continues to stand the test of time. The real question is,...",
+      "url": "https://dev.to/sbusienei/excel-relevant-or-outdated-52a0",
+      "canonical_url": "https://medium.com/@sbusienei/excel-relevant-or-outdated-567af061376e",
+      "published_at": "2026-07-02T16:46:45Z",
+      "reading_time_minutes": 4,
+      "sources": [
+        "DEV"
+      ]
+    },
+    {
+      "source": "MEDIUM",
+      "title": "Maximizing Your Internship Experience. Lessons from a Microsoft Intern.",
+      "description": "",
+      "url": "https://medium.com/@sbusienei/maximizing-your-internship-experience-from-a-microsoft-intern-b130a4304aab?source=rss-1a8b89a1016a------2",
+      "canonical_url": "https://medium.com/@sbusienei/maximizing-your-internship-experience-from-a-microsoft-intern-b130a4304aab?source=rss-1a8b89a1016a------2",
+      "published_at": "2023-09-01T09:59:13Z",
+      "reading_time_minutes": 7,
+      "sources": [
+        "MEDIUM"
+      ]
+    },
+    {
+      "source": "DEV",
+      "title": "Python For Everyone: Mastering Python The Right Way",
+      "description": "I have recently been reading 'Atomic Habits' by James Clear. In the book, James has a captivating...",
+      "url": "https://dev.to/sbusienei/python-for-everyone-mastering-python-the-right-way-18gn",
+      "canonical_url": "https://dev.to/sbusienei/python-for-everyone-mastering-python-the-right-way-18gn",
+      "published_at": "2022-03-04T15:13:27Z",
+      "reading_time_minutes": 5,
+      "sources": [
+        "DEV"
+      ]
+    },
+    {
+      "source": "DEV",
+      "title": "Introduction to Data Structures",
+      "description": "A Data Structure is a special format of organizing, processing, retrieving and storing data. They...",
+      "url": "https://dev.to/sbusienei/introduction-to-data-structures-and-algorithms-with-python-1oei",
+      "canonical_url": "https://dev.to/sbusienei/introduction-to-data-structures-and-algorithms-with-python-1oei",
+      "published_at": "2022-02-20T19:58:35Z",
+      "reading_time_minutes": 6,
+      "sources": [
+        "DEV"
+      ]
+    },
+    {
+      "source": "DEV",
+      "title": "Introduction to Modern Python",
+      "description": "Introduction You most probably know why and are now scouring the internet for Zen advice...",
+      "url": "https://dev.to/sbusienei/introduction-to-modern-python-1kog",
+      "canonical_url": "https://dev.to/sbusienei/introduction-to-modern-python-1kog",
+      "published_at": "2022-02-14T10:35:29Z",
+      "reading_time_minutes": 3,
+      "sources": [
+        "DEV"
+      ]
+    }
+  ]
+}

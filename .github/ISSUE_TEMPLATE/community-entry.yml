@@ -1,0 +1,50 @@
+name: Community portfolio entry
+description: Propose a reviewed community or mentorship entry for the portfolio.
+title: "[Community] "
+labels:
+  - community-entry
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit factual, publishable information. A pull request will be opened for review; the issue does not update the live site directly.
+  - type: input
+    id: organisation
+    attributes:
+      label: Organisation
+      placeholder: Global Mentorship Initiative
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      placeholder: Career mentor
+    validations:
+      required: true
+  - type: input
+    id: period
+    attributes:
+      label: Period
+      placeholder: Jan 2026 – present
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A concise, factual description suitable for the public portfolio.
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Impact or evidence link
+      description: Link to a public post, event page, certificate, or other supporting evidence.
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Logo or image URL
+      description: Optional direct public image URL. A deterministic local fallback is generated when omitted.

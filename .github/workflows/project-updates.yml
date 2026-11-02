@@ -1,0 +1,81 @@
+name: Propose project updates
+
+on:
+  schedule:
+    - cron: "30 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: project-updates
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover opted-in projects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/sync_projects.py
+      - name: Validate generated site
+        run: python scripts/validate_site.py
+      - name: Detect project changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- data/projects.json index.html img/projects/generated; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit project proposal
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C automation/portfolio-projects
+          git add -- data/projects.json index.html
+          if [ -d img/projects/generated ]; then
+            git add -- img/projects/generated
+          fi
+          git commit -m "Propose portfolio project updates"
+          git push --force-with-lease origin HEAD:automation/portfolio-projects
+      - name: Open or update assigned pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh label create portfolio-update --color 0e8a16 --description "Automated portfolio update awaiting review" --force
+          number="$(gh pr list --state open --head automation/portfolio-projects --json number --jq '.[0].number // empty')"
+          if [ -z "$number" ]; then
+            gh pr create \
+              --base main \
+              --head automation/portfolio-projects \
+              --title "Update portfolio projects" \
+              --body "Automated proposal from public repositories explicitly tagged with the \`portfolio\` topic. Review before merging." \
+              --assignee SBusienei \
+              --label portfolio-update
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/${number}/assignees" -f 'assignees[]=SBusienei' >/dev/null
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/${number}/labels" -f 'labels[]=portfolio-update' >/dev/null
+          fi
+      - name: Report workflow failure
+        if: ${{ failure() && hashFiles('scripts/notify_failure.py') != '' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/notify_failure.py

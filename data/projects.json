@@ -1,0 +1,62 @@
+{
+  "projects": [
+    {
+      "repo": "Netflix-Relevance-Project",
+      "title": "Hybrid Search & Retrieval Evaluation",
+      "summary": "Hybrid BM25 + ANN + transformer reranking over 8,807 Netflix records behind a cached FastAPI service, with latency benchmarks and a tool-calling agent with grounding checks.",
+      "shows": "retrieval, serving, evaluation, tests, CI and Docker.",
+      "tags": [
+        "mle",
+        "fde"
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "BM25",
+        "Docker"
+      ],
+      "code_url": "https://github.com/SBusienei/Netflix-Relevance-Project",
+      "live_url": "https://cheruto-netflix-relevance.streamlit.app/genre",
+      "image": "img/hybrid-search.svg",
+      "image_alt": "Hybrid search pipeline diagram"
+    },
+    {
+      "repo": "sloth-archivist",
+      "title": "Sloth Archivist",
+      "summary": "An offline CLI that triages photo folders with rules first, a local vision model second, and logs every decision. Nothing is deleted.",
+      "shows": "pipeline design, safe automation, schema-validated model output.",
+      "tags": [
+        "mle",
+        "fde"
+      ],
+      "technologies": [
+        "Python",
+        "Ollama",
+        "Gemma",
+        "pytest"
+      ],
+      "code_url": "https://github.com/SBusienei/sloth-archivist",
+      "live_url": "",
+      "image": "img/sloth.svg",
+      "image_alt": "Photo triage flow"
+    },
+    {
+      "repo": "04-housing-data-analysis",
+      "title": "Hotel cancellation risk",
+      "summary": "SQL-first analysis and chronologically validated models, explicit about prediction versus intervention.",
+      "shows": "SQL, data quality, leakage control, calibration.",
+      "tags": [
+        "ds"
+      ],
+      "technologies": [
+        "PostgreSQL",
+        "scikit-learn",
+        "pandas"
+      ],
+      "code_url": "https://github.com/SBusienei/04-housing-data-analysis",
+      "live_url": "",
+      "image": "img/ab-tests.svg",
+      "image_alt": "Illustrative bar chart"
+    }
+  ]
+}

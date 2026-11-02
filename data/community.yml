@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "id": "global-mentorship-initiative-2026",
+      "organisation": "Global Mentorship Initiative",
+      "role": "Second-time career mentor",
+      "period": "2026",
+      "summary": "Completed a 12-session mentorship supporting a university student with résumé development, networking, career planning and professional skills.",
+      "evidence_url": "https://www.linkedin.com/posts/sharleenbusienei_microsoft-adc-wins-mentoring-and-iwd-2026-ugcPost-7449475870873853952-hHpE/",
+      "evidence_label": "Read the reflection",
+      "image": "img/community/gmi.png"
+    },
+    {
+      "id": "rewriting-the-code-kenya-2026",
+      "organisation": "Rewriting the Code Kenya",
+      "role": "Community speaker",
+      "period": "2026",
+      "summary": "Shared lessons from working in technology with students and early-career professionals at a community event for future engineers and product leaders.",
+      "evidence_url": "https://www.linkedin.com/posts/sharleenbusienei_the-rewriting-the-code-kenya-event-was-a-ugcPost-7442188678640324610-c79k/",
+      "evidence_label": "See the event post",
+      "image": "img/community/rtc.png"
+    },
+    {
+      "id": "women-techmakers-ambassador",
+      "organisation": "Women Techmakers",
+      "role": "Ambassador",
+      "period": "Jul 2023 – present",
+      "summary": "Part of a global community of leaders supporting women in technology through visibility, connection and community participation.",
+      "image": "img/community/women-techmakers.png"
+    },
+    {
+      "id": "technovation-head-judge",
+      "organisation": "Technovation",
+      "role": "Head Judge",
+      "period": "Jun – Aug 2021",
+      "summary": "Assessed and scored technology projects submitted by Technovation teams from around the world.",
+      "image": "img/community/technovation.png"
+    }
+  ]
+}

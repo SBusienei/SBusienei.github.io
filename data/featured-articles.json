@@ -1,0 +1,14 @@
+{
+  "featured": [
+    {
+      "url": "https://dev.to/sbusienei/hadithi-speak-with-your-cultural-legends-eg-la-llorona-and-luanda-magere-50ad",
+      "title": "Hadithi: Speak with Your Cultural Legends",
+      "description": "An open-source AI experience for conversations with cultural legends such as La Llorona and Luanda Magere."
+    },
+    {
+      "url": "https://dev.to/sbusienei/sloth-archivist-clean-your-camera-roll-and-journal-as-you-sleep-5cld",
+      "title": "Sloth Archivist: Clean Your Camera Roll and Journal As You Sleep",
+      "description": "A safe, local-first AI assistant that organises photos without being allowed to delete anything."
+    }
+  ]
+}

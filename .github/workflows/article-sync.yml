@@ -1,0 +1,51 @@
+name: Sync articles
+
+on:
+  schedule:
+    - cron: "15 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: article-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synchronize feeds
+        run: python scripts/sync_articles.py
+      - name: Validate generated site
+        run: python scripts/validate_site.py
+      - name: Commit changed article data
+        shell: bash
+        run: |
+          if git diff --quiet -- data/articles.json index.html img/articles/generated; then
+            echo "No article changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/articles.json index.html
+          if [ -d img/articles/generated ]; then
+            git add -- img/articles/generated
+          fi
+          git commit -m "Sync portfolio articles"
+          git push origin HEAD:main
+      - name: Report workflow failure
+        if: ${{ failure() && hashFiles('scripts/notify_failure.py') != '' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/notify_failure.py

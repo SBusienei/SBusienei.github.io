@@ -1,0 +1,72 @@
+name: Propose community entry
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: community-entry-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    if: contains(github.event.issue.labels.*.name, 'community-entry')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add reviewed issue data to a proposal
+        env:
+          COMMUNITY_ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scripts/community_issue.py
+      - name: Validate generated site
+        run: python scripts/validate_site.py
+      - name: Commit community proposal
+        shell: bash
+        run: |
+          branch="automation/community-${{ github.event.issue.number }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$branch"
+          git add -- data/community.yml index.html
+          if [ -d img/community/generated ]; then
+            git add -- img/community/generated
+          fi
+          git commit -m "Propose community portfolio entry"
+          git push --force-with-lease origin "HEAD:${branch}"
+      - name: Open or update assigned pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          branch="automation/community-${{ github.event.issue.number }}"
+          gh label create portfolio-update --color 0e8a16 --description "Automated portfolio update awaiting review" --force
+          number="$(gh pr list --state open --head "$branch" --json number --jq '.[0].number // empty')"
+          if [ -z "$number" ]; then
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Add community portfolio entry" \
+              --body "Human-reviewed community entry proposed from #${{ github.event.issue.number }}.\n\nCloses #${{ github.event.issue.number }}" \
+              --assignee SBusienei \
+              --label portfolio-update
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/${number}/assignees" -f 'assignees[]=SBusienei' >/dev/null
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/${number}/labels" -f 'labels[]=portfolio-update' >/dev/null
+          fi
+      - name: Report workflow failure
+        if: ${{ failure() && hashFiles('scripts/notify_failure.py') != '' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/notify_failure.py
