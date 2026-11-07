@@ -24,9 +24,7 @@
     <div>
       <div class="eyebrow mono">AI ENGINEER · LLM APPS, RETRIEVAL &amp; EVALUATION · NAIROBI · OPEN TO RELOCATION</div>
       <h1>Sharleen Busienei<br><span class="tag">I build AI systems that <em>work in production.</em></span></h1>
-      <p class="lede">AI engineer at Microsoft with three years of experience in search and recommendation for
-        Microsoft 365 Copilot (2M+ monthly enterprise users). I build LLM applications, hybrid retrieval and agents,
-        and the evaluation, experimentation and telemetry that show whether they work. BSc Computer Science, First Class Honours.</p>
+      <p class="lede">AI engineer with nearly four years building production search, recommendation and LLM systems—including Microsoft 365 Copilot for 2M+ monthly enterprise users.</p>
       <div class="cta">
         <a class="btn primary" href="#projects">See my projects</a>
         <a class="btn social-btn" href="https://github.com/SBusienei" aria-label="GitHub profile"><img src="img/social/github.svg" alt=""><span>GitHub</span></a>
@@ -39,7 +37,7 @@
   </header>
 
   <div class="facts">
-    <div><b>4 yrs</b><span>building software &amp; AI</span></div>
+    <div><b>Nearly 4 yrs</b><span>building software &amp; AI</span></div>
     <div><b>30+</b><span>A/B evaluations</span></div>
     <div><b>~120M</b><span>telemetry events / day</span></div>
     <div><b>First Class</b><span>BSc Computer Science</span></div>
@@ -68,8 +66,9 @@
       <div class="job">
         <h3><svg class="co" viewBox="0 0 21 21" role="img" aria-labelledby="microsoft-role-title"><title id="microsoft-role-title">Microsoft</title><rect width="10" height="10" fill="#f25022"/><rect x="11" width="10" height="10" fill="#7fba00"/><rect y="11" width="10" height="10" fill="#00a4ef"/><rect x="11" y="11" width="10" height="10" fill="#ffb900"/></svg>Software Engineer, Search &amp; Recommendation (Microsoft 365 Copilot)</h3>
         <div class="meta mono">Microsoft · Aug 2023 – Dec 2026 · promoted twice, L59 → L61 (Software Engineer II)</div>
+        <p class="job-summary"><strong>Agent and plugin discovery:</strong> the layer that decides which tool a natural-language request should reach across plugins, connectors and agents. Most of my work there wasn't modelling. It was figuring out whether a change actually helped.</p>
         <ul>
-          <li>Worked on evaluating embedding models and ranking against offline relevance judgments and online behavioural signals.</li>
+          <li>Evaluated embedding models and ranking changes against offline relevance judgments and online behavioural signals.</li>
           <li>Contributed to 30+ controlled A/B evaluations that informed launch and rollback decisions.</li>
           <li>Worked on telemetry pipelines processing roughly 120M events a day.</li>
           <li>Partnered with product, engineering and design on search quality.</li>
@@ -77,25 +76,32 @@
       </div>
       <div class="job">
         <h3><svg class="co" viewBox="0 0 21 21" role="img" aria-labelledby="microsoft-intern-title"><title id="microsoft-intern-title">Microsoft</title><rect width="10" height="10" fill="#f25022"/><rect x="11" width="10" height="10" fill="#7fba00"/><rect y="11" width="10" height="10" fill="#00a4ef"/><rect x="11" y="11" width="10" height="10" fill="#ffb900"/></svg>Software Engineering Intern, Africa Development Centre</h3>
-        <div class="meta mono">Microsoft · Jul – Sep 2022</div>
+        <div class="meta mono">Microsoft · Jun – Sep 2022</div>
         <ul>
-          <li>Built the Teams search bar app-results experience (a federated search candidate source).</li>
-          <li>Built an offline precision/recall evaluation tool for query-to-plugin matching.</li>
+          <li>Contributed to the Teams search bar app-results experience, a federated search candidate source.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Featured Projects</h2>
+    <p class="sub">LLM applications and AI systems designed with evaluation, safeguards and production use in mind.</p>
     <div class="lens" id="lens">
       <button class="chip on" data-lens="all">All</button>
-      <button class="chip" data-lens="ds">Data science</button>
       <button class="chip" data-lens="mle">ML / AI engineering</button>
       <button class="chip" data-lens="fde">Applied / deployment</button>
     </div>
     <div class="grid">
       <!-- AUTO-PROJECTS:START -->
+      <article class="card" data-tags="mle fde">
+        <img class="thumb" src="img/articles/hadithi.webp" alt="Hadithi cultural legends experience" loading="lazy" decoding="async">
+        <h3>Hadithi</h3>
+        <p>An immersive, multilingual LLM application for source-grounded conversations with cultural legends, spanning interactive environments, speech transcription and validated citations.</p>
+        <p class="why"><b>Shows:</b> LLM application design, cultural safeguards, structured output validation, multilingual UX and production deployment.</p>
+        <div class="stack"><span>Python</span><span>FastAPI</span><span>Three.js</span><span>Whisper</span><span>Cloudflare AI</span></div>
+        <div class="row"><a href="https://github.com/SBusienei/hadithi" target="_blank" rel="noopener noreferrer">Code</a><a href="https://hadithi-zciw.onrender.com/portal" target="_blank" rel="noopener noreferrer">Live app</a></div>
+      </article>
       <article class="card" data-tags="mle fde">
         <img class="thumb" src="img/hybrid-search.svg" alt="Hybrid search pipeline diagram" loading="lazy" decoding="async">
         <h3>Hybrid Search &amp; Retrieval Evaluation</h3>
@@ -111,14 +117,6 @@
         <p class="why"><b>Shows:</b> pipeline design, safe automation, schema-validated model output.</p>
         <div class="stack"><span>Python</span><span>Ollama</span><span>Gemma</span><span>pytest</span></div>
         <div class="row"><a href="https://github.com/SBusienei/sloth-archivist" target="_blank" rel="noopener noreferrer">Code</a></div>
-      </article>
-      <article class="card" data-tags="ds">
-        <img class="thumb" src="img/ab-tests.svg" alt="Illustrative bar chart" loading="lazy" decoding="async">
-        <h3>Hotel cancellation risk</h3>
-        <p>SQL-first analysis and chronologically validated models, explicit about prediction versus intervention.</p>
-        <p class="why"><b>Shows:</b> SQL, data quality, leakage control, calibration.</p>
-        <div class="stack"><span>PostgreSQL</span><span>scikit-learn</span><span>pandas</span></div>
-        <div class="row"><a href="https://github.com/SBusienei/04-housing-data-analysis" target="_blank" rel="noopener noreferrer">Code</a></div>
       </article>
       <!-- AUTO-PROJECTS:END -->
     </div>
